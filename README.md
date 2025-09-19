@@ -1,20 +1,20 @@
 ## Installation
 
-# clone the repo
+## clone the repo
 git clone 
 cd my-playwright-project
 
-# install dependencies
+## install dependencies
 pnpm install
 
-# run all tests
+## run all tests
 pnpm test
 
-# run in headed mode
+## run in headed mode
 pnpm test:headed
 
-# run a specific file
+## run a specific file
 pnpm test tests/saucedemo.spec.ts
 
-# run a report 
+## run a report 
 pnpm report
