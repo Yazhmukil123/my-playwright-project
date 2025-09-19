@@ -1,5 +1,20 @@
-pnpm test: "playwright test",
-pnpm test:headed : "playwright test --headed",
-pnpm test:debug : "PWDEBUG=1 playwright test",
-pnpm open : "playwright test --project=chromium --ui",
-pnpm report : "playwright show-report",
+## Installation
+
+# clone the repo
+git clone 
+cd my-playwright-project
+
+# install dependencies
+pnpm install
+
+# run all tests
+pnpm test
+
+# run in headed mode
+pnpm test:headed
+
+# run a specific file
+pnpm test tests/saucedemo.spec.ts
+
+# run a report 
+pnpm report
