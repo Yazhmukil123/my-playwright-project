@@ -1,0 +1,5 @@
+pnpm test: "playwright test",
+pnpm test:headed : "playwright test --headed",
+pnpm test:debug : "PWDEBUG=1 playwright test",
+pnpm open : "playwright test --project=chromium --ui",
+pnpm report : "playwright show-report",
