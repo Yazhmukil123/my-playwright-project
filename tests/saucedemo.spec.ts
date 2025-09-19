@@ -8,7 +8,7 @@ let page;
 let context: any;
 let sortProduct: any;
 
-// test.describe("saucedemo testing", async () => {
+test.describe("saucedemo testing", async () => {
     test.beforeAll("login credentials", async ({ browser }) => {
         context = await browser.newContext({
             ignoreHTTPSErrors: true
@@ -18,12 +18,11 @@ let sortProduct: any;
         const right_username = process.env.USER_NAME as string;
         const right_password = process.env.PASSWORD as string;
 
-
         const login = new LoginScenarios(page);
         const credentials = [
-            // { username: "wrong_user_1", password: "wrong_password_1" },
-            // { username: "wrong_user_2", password: right_password },
-            // { username: right_username, password: "wrong_password_2" },
+            { username: "wrong_user_1", password: "wrong_password_1" },
+            { username: "wrong_user_2", password: right_password },
+            { username: right_username, password: "wrong_password_2" },
             { username: right_username, password: right_password }
         ];
 
@@ -67,4 +66,4 @@ let sortProduct: any;
     });
 
 
-// });
+});
