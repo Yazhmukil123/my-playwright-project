@@ -1,7 +1,8 @@
 ## Installation
 
 ## clone the repo
-git clone 
+## Fork the repo
+git clone ssh
 cd my-playwright-project
 
 ## install dependencies
