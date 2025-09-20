@@ -2,11 +2,13 @@ import { test, Page, BrowserContext } from "@playwright/test";
 import { LoginScenarios } from "../pages/LoginScenarios";
 import { SortProduct } from "../pages/SortProduct";
 import dotenv from "dotenv";
+import { CheckoutProcess } from "../pages/CheckoutProcess";
 dotenv.config;
 
 let page;
 let context: any;
 let sortProduct: any;
+let checkoutProcess: any;
 
 test.describe("saucedemo testing", async () => {
     test.beforeAll("login credentials", async ({ browser }) => {
@@ -50,20 +52,23 @@ test.describe("saucedemo testing", async () => {
         }
 
         sortProduct = new SortProduct(page);
+        checkoutProcess = new CheckoutProcess(page);
 
     });
 
-    test.afterAll(async () => {
-        await context.close();
-    })
-
-    test("Sort Product", async ({ page }) => {
-
+    test("Sort Product", async () => {
         await sortProduct.sortProductNameAsDecendingOrder();
         await sortProduct.sortProductNameAsAscendingOrder();
         await sortProduct.sortProductPriceLowToHigh();
         await sortProduct.sortProductPriceHighToLow();
     });
+
+    test("Checkout Process", async()=> {
+        await checkoutProcess.addToCart();
+        await checkoutProcess.shoppingCart();
+        await checkoutProcess.checkoutInformations();
+        await checkoutProcess.finishOrder();
+    })
 
 
 });
